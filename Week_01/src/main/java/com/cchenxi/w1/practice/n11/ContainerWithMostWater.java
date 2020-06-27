@@ -1,4 +1,4 @@
-package com.cchenxi.w1.n11;
+package com.cchenxi.w1.practice.n11;
 
 /**
  * https://leetcode-cn.com/problems/container-with-most-water/

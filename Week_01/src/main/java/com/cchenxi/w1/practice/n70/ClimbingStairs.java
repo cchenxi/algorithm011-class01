@@ -1,4 +1,4 @@
-package com.cchenxi.w1.n70;
+package com.cchenxi.w1.practice.n70;
 
 /**
  * https://leetcode-cn.com/problems/climbing-stairs/

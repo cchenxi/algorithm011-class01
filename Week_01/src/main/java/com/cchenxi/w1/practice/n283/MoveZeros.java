@@ -1,4 +1,4 @@
-package com.cchenxi.w1.n283;
+package com.cchenxi.w1.practice.n283;
 
 /**
  * https://leetcode-cn.com/problems/move-zeroes/

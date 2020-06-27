@@ -1,8 +1,6 @@
-package com.cchenxi.w1.n11;
+package com.cchenxi.w1.practice.n11;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Date: 2020-06-26

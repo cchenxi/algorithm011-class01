@@ -1,4 +1,4 @@
-package com.cchenxi.w1.n1;
+package com.cchenxi.w1.practice.n1;
 
 /**
  * https://leetcode-cn.com/problems/two-sum/
