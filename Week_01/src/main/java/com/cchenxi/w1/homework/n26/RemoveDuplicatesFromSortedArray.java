@@ -54,7 +54,12 @@ public class RemoveDuplicatesFromSortedArray {
     }
 
     /**
-     * 双指针法
+     * 双指针法（快慢指针）
+     *
+     * 慢指针 i，用于记录不重复的元素索引
+     *
+     * 快指针 j，遍历整个数组
+     *
      *
      * @param nums
      * @return

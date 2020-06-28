@@ -1,4 +1,4 @@
-package com.cchenxi.w1.practice.n283;
+package com.cchenxi.w1.homework.n283;
 
 /**
  * https://leetcode-cn.com/problems/move-zeroes/
@@ -16,7 +16,7 @@ package com.cchenxi.w1.practice.n283;
  */
 public class MoveZeros {
     public void moveZeroes(int[] nums) {
-
+        m2(nums);
     }
 
     public void m1(int[] nums) {
@@ -24,11 +24,13 @@ public class MoveZeros {
             return;
         }
         int x = 0;
+        //loop 1，将非0元素移动到数组前面
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 nums[x++] = nums[i];
             }
         }
+        //loop 2，其余位补0
         while (x < nums.length) {
             nums[x++] = 0;
         }
@@ -38,6 +40,7 @@ public class MoveZeros {
         if (nums == null || nums.length == 0) {
             return;
         }
+        //存储非0元素下标
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
