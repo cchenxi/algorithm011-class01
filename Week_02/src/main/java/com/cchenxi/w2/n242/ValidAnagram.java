@@ -1,4 +1,4 @@
-package com.cchenxi.w2.practice.n242;
+package com.cchenxi.w2.n242;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.cchenxi.w2.practice.n1;
+package com.cchenxi.w2.n1;
 
 import java.util.HashMap;
 import java.util.Map;

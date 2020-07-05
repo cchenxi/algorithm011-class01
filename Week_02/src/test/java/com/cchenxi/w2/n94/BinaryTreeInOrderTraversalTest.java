@@ -1,4 +1,4 @@
-package com.cchenxi.w2.practice.n94;
+package com.cchenxi.w2.n94;
 
 import java.util.List;
 

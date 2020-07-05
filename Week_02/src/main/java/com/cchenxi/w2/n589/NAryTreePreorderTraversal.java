@@ -1,4 +1,4 @@
-package com.cchenxi.w2.practice.n589;
+package com.cchenxi.w2.n589;
 
 import java.util.ArrayList;
 import java.util.List;
