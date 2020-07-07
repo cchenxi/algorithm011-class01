@@ -16,7 +16,7 @@ package com.cchenxi.w1.homework.n283;
  */
 public class MoveZeros {
     public void moveZeroes(int[] nums) {
-        m2(nums);
+        m3(nums);
     }
 
     public void m1(int[] nums) {
@@ -46,6 +46,33 @@ public class MoveZeros {
             if (nums[i] != 0) {
                 nums[j] = nums[i];
                 if (i != j) {
+                    nums[i] = 0;
+                }
+                j++;
+            }
+        }
+    }
+
+    /**
+     * 二刷 2020-07-07
+     *
+     * 思路
+     * 双指针
+     * i 用来遍历数组元素
+     * j 用来记录非0元素的索引
+     * i遇到非0，就复制给nums[j],j永远跑不过i
+     *
+     * @param nums
+     */
+    public void m3(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[j] = nums[i];
+                if (j != i) {
                     nums[i] = 0;
                 }
                 j++;
