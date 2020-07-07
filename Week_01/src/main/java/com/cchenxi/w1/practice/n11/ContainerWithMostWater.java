@@ -41,4 +41,27 @@ public class ContainerWithMostWater {
         }
         return max;
     }
+
+    /**
+     * 二刷
+     *
+     * 思路
+     * 双指针
+     * i从前向后
+     * j从后向前
+     * 取height[i]和height[j]中较小的值作为高，并且向中间移动一位
+     * 计算面积 长=j-i+1，+1是因为上述操作向中间移动了一位，所以要再加回来
+     *
+     * @param height
+     * @return
+     */
+    public int m3(int[] height) {
+        int max = 0;
+        for (int i = 0, j = height.length - 1; i < j;) {
+            int h = height[i] < height[j] ? height[i++] : height[j--];
+            int area = (j - i + 1) * h;
+            max = Math.max(max, area);
+        }
+        return max;
+    }
 }
