@@ -1,5 +1,8 @@
 package com.cchenxi.w1.practice.n1;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * https://leetcode-cn.com/problems/two-sum/
  *
@@ -21,7 +24,7 @@ package com.cchenxi.w1.practice.n1;
  */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        return m1(nums, target);
+        return m2(nums, target);
     }
 
     /**
@@ -40,5 +43,20 @@ public class TwoSum {
             }
         }
         return new int[2];
+    }
+
+    public int[] m2(int[] nums, int target) {
+        if (nums == null || nums.length < 2) {
+            throw new IllegalArgumentException("no Solution");
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int other = target - nums[i];
+            if (map.containsKey(other) && i != map.get(other)) {
+                return new int[]{i, map.get(other)};
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("no Solution");
     }
 }
