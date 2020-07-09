@@ -24,7 +24,7 @@ import java.util.Map;
  */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        return m2(nums, target);
+        return m3(nums, target);
     }
 
     /**
@@ -58,5 +58,20 @@ public class TwoSum {
             map.put(nums[i], i);
         }
         throw new IllegalArgumentException("no Solution");
+    }
+
+    public int[] m3(int[] nums, int target) {
+        if (nums == null || nums.length < 2) {
+            throw new IllegalArgumentException("no solution");
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int other = target - nums[i];
+            if (map.containsKey(other) && i != map.get(other)) {
+                return new int[]{i, map.get(other)};
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("no solution");
     }
 }
