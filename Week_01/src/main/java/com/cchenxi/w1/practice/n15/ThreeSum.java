@@ -37,7 +37,7 @@ import java.util.Set;
  */
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
-        return m2(nums);
+        return m3(nums);
     }
 
     /**
@@ -87,6 +87,46 @@ public class ThreeSum {
                     result.add(list);
                 } else {
                     map.put(nums[j], nums[j]);
+                }
+            }
+        }
+        return new ArrayList<>(result);
+    }
+
+    /**
+     * 左右夹逼
+     *
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> m3(int[] nums) {
+        if (nums == null || nums.length < 3) {
+            return Collections.emptyList();
+        }
+
+        //有序数组 左右夹逼
+        Arrays.sort(nums);
+        Set<List<Integer>> result = new LinkedHashSet<>();
+        for (int i = 0; i < nums.length - 2; i++) {
+            int j = i + 1;
+            int k = nums.length - 1;
+            int target = -nums[i];
+            while (j < k) {
+                if (nums[j] + nums[k] == target) {
+                    result.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    j++;
+                    k--;
+                    //调过重复
+                    while (j < k && nums[j] == nums[j - 1]) {
+                        j++;
+                    }
+                    while (j < k && nums[k] == nums[k + 1]) {
+                        k--;
+                    }
+                } else if (nums[j] + nums[k] > target) {
+                    k--;
+                } else {
+                    j++;
                 }
             }
         }
