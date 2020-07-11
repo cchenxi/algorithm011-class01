@@ -2,7 +2,8 @@ package com.cchenxi.w1.practice.n15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -45,13 +46,13 @@ public class ThreeSum {
      * @return
      */
     public List<List<Integer>> m1(int[] nums) {
-        Set<List<Integer>> result = new HashSet<>();
         if (nums == null || nums.length < 3) {
             //注意 不合法的场景也需要返回list
-            return new ArrayList<>(result);
+            return Collections.emptyList();
         }
 
         Arrays.sort(nums);
+        Set<List<Integer>> result = new LinkedHashSet<>();
         for (int i = 0; i < nums.length - 2; i++) {
             for (int j = i + 1; j < nums.length - 1; j++) {
                 for (int k = j + 1; k < nums.length; k++) {
