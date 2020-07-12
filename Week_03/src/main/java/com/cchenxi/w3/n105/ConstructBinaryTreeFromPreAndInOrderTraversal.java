@@ -30,7 +30,7 @@ public class ConstructBinaryTreeFromPreAndInOrderTraversal {
 
     //preorder = [3,9,20,15,7]
     //inorder = [9,3,15,20,7]
-    //不需要将数组切割 只需要用指针划定范围 左毕右开区间
+    //不需要将数组切割 只需要用指针划定范围 左闭右开区间
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return help(preorder, 0, preorder.length, inorder, 0, inorder.length);
     }
