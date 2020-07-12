@@ -39,7 +39,7 @@ import java.util.Stack;
  */
 public class ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
-        return m1(root);
+        return m2(root);
     }
 
     /**
@@ -63,6 +63,42 @@ public class ValidateBinarySearchTree {
             }
             tmp = root.val;
             root = root.right;
+        }
+        return true;
+    }
+
+    /**
+     * 二叉树的左子树不为空，则左子树上所有节点均小于它根节点的值
+     * 若二叉树右子树不为空，则右子树上所有节点均大于它跟阶段的值
+     * 左右子树也均是二叉搜索树
+     *
+     * @param root
+     * @return
+     */
+    public boolean m2(TreeNode root) {
+        return help(root, null, null);
+    }
+
+    private boolean help(TreeNode root, Integer lower, Integer upper) {
+        if (root == null) {
+            return true;
+        }
+
+        int val = root.val;
+        if (lower != null && val <= lower) {
+            return false;
+        }
+        if (upper != null && val >= upper) {
+            return false;
+        }
+
+        //调用递归左子树时，需要将上界upper修改为root.val
+        if (!help(root.left, lower, val)) {
+            return false;
+        }
+        //调用递归右子树时，需要将下届lower修改为root.val
+        if (!help(root.right, val, upper)) {
+            return false;
         }
         return true;
     }
