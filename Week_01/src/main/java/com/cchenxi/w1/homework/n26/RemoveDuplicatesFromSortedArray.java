@@ -50,7 +50,7 @@ package com.cchenxi.w1.homework.n26;
  */
 public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {
-        return m1(nums);
+        return m2(nums);
     }
 
     /**
@@ -66,6 +66,20 @@ public class RemoveDuplicatesFromSortedArray {
      */
     public int m1(int[] nums) {
         if (nums == null) {
+            return 0;
+        }
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[i] != nums[j]) {
+                nums[++i] = nums[j];
+            }
+        }
+        //i为索引，i+1才等于数组长度
+        return i + 1;
+    }
+
+    public int m2(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
         int i = 0;
